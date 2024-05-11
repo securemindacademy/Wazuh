@@ -1,0 +1,6 @@
+...
+  <localfile>
+    <log_format>audit</log_format>
+    <location>/var/log/audit/audit.log</location>
+  </localfile>
+...
