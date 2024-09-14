@@ -1,0 +1,30 @@
+#############################################################
+#  ____  _____ ____ _   _ ____  _____ __  __ ___ _   _ ____  
+# / ___|| ____/ ___| | | |  _ \| ____|  \/  |_ _| \ | |  _ \ 
+# \___ \|  _|| |   | | | | |_) |  _| | |\/| || ||  \| | | | |
+#  ___) | |__| |___| |_| |  _ <| |___| |  | || || |\  | |_| |
+# |____/|_____\____|\___/|_| \_\_____|_|_ |_|___|_| \_|____/ 
+#          / \  / ___|  / \  |  _ \| ____|  \/  \ \ / /      
+#         / _ \| |     / _ \ | | | |  _| | |\/| |\ V /       
+#        / ___ \ |___ / ___ \| |_| | |___| |  | | | |        
+#       /_/   \_\____/_/   \_\____/|_____|_|  |_| |_|        
+
+<group name="windows,windows_firewall,firewall,">
+
+  <rule id="102010" level="10">
+    <if_sid>67001</if_sid>
+    <field name="win.system.eventID">^2099$</field>
+    <description>Windows Firewall With Advanced Security: $(win.eventdata.ruleId) rule has been modified in the Windows Defender Firewall exception list.</description>
+    <options>no_full_log</options>
+    <group>pci_dss_1.4,gpg13_4.12,gdpr_IV_35.7.d,hipaa_164.312.a.1,nist_800_53_SC.7,tsc_CC6.7,tsc_CC6.8,</group>
+  </rule>
+
+  <rule id="102012" level="10">
+    <if_sid>67001</if_sid>
+    <field name="win.system.eventID">^2097$</field>
+    <description>Windows Firewall With Advanced Security: $(win.eventdata.ruleId) rule has been added to the Windows Defender Firewall exception list.</description>
+    <options>no_full_log</options>
+    <group>pci_dss_1.4,gpg13_4.12,gdpr_IV_35.7.d,hipaa_164.312.a.1,nist_800_53_SC.7,tsc_CC6.7,tsc_CC6.8,</group>
+  </rule>
+
+</group>
