@@ -1,0 +1,22 @@
+#############################################################
+#  ____  _____ ____ _   _ ____  _____ __  __ ___ _   _ ____  
+# / ___|| ____/ ___| | | |  _ \| ____|  \/  |_ _| \ | |  _ \ 
+# \___ \|  _|| |   | | | | |_) |  _| | |\/| || ||  \| | | | |
+#  ___) | |__| |___| |_| |  _ <| |___| |  | || || |\  | |_| |
+# |____/|_____\____|\___/|_| \_\_____|_|_ |_|___|_| \_|____/ 
+#          / \  / ___|  / \  |  _ \| ____|  \/  \ \ / /      
+#         / _ \| |     / _ \ | | | |  _| | |\/| |\ V /       
+#        / ___ \ |___ / ___ \| |_| | |___| |  | | | |        
+#       /_/   \_\____/_/   \_\____/|_____|_|  |_| |_|        
+
+### 2003 - Firewall configuration changed
+### 2004 - Firewall rule created
+### 2005 - Firewall rule modified
+### 2006 - Firewall rule deleted
+  ...
+  	<localfile>
+		<location>Microsoft-Windows-Windows Firewall With Advanced Security/Firewall</location>
+		<log_format>eventchannel</log_format>
+		<query>Event/System[EventID=2003 or EventID=2004 or EventID=2005 or EventID=2006 or EventID=2097 or EventID=2099]</query>
+	</localfile>
+  ...
