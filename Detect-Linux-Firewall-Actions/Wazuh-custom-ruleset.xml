@@ -1,0 +1,64 @@
+#############################################################
+#  ____  _____ ____ _   _ ____  _____ __  __ ___ _   _ ____  
+# / ___|| ____/ ___| | | |  _ \| ____|  \/  |_ _| \ | |  _ \ 
+# \___ \|  _|| |   | | | | |_) |  _| | |\/| || ||  \| | | | |
+#  ___) | |__| |___| |_| |  _ <| |___| |  | || || |\  | |_| |
+# |____/|_____\____|\___/|_| \_\_____|_|_ |_|___|_| \_|____/ 
+#          / \  / ___|  / \  |  _ \| ____|  \/  \ \ / /      
+#         / _ \| |     / _ \ | | | |  _| | |\/| |\ V /       
+#        / ___ \ |___ / ___ \| |_| | |___| |  | | | |        
+#       /_/   \_\____/_/   \_\____/|_____|_|  |_| |_|        
+
+...
+<group name="firewall_changes,">
+  <rule id="80900" level="10">
+    <if_sid>80700</if_sid>
+    <field name="audit.execve.a1">ufw</field>
+    <field name="audit.execve.a2">allow</field>
+    <description>UFW: Rule added to $(audit.execve.a2) connections $(audit.execve.a3) $(audit.execve.a4).</description>
+    <group>firewall,gdpr_IV_30.1.g,</group>
+    <mitre>
+      <id>T1562.004</id>
+    </mitre>
+  </rule>
+  <rule id="80901" level="10">
+    <if_sid>80700</if_sid>
+    <field name="audit.execve.a1">ufw</field>
+    <field name="audit.execve.a2">delete</field>
+    <description>UFW: Firewall rule deleted.</description>
+    <group>firewall,gdpr_IV_30.1.g,</group>
+    <mitre>
+      <id>T1562.004</id>
+    </mitre>
+  </rule>
+  <rule id="80902" level="7">
+    <if_sid>80700</if_sid>
+    <field name="audit.execve.a1">ufw</field>
+    <field name="audit.execve.a2">enable</field>
+    <description>UFW: Firewall enabled.</description>
+    <group>firewall,gdpr_IV_30.1.g,</group>
+    <mitre>
+      <id>T1562.004</id>
+    </mitre>
+  </rule>
+  <rule id="80903" level="10">
+    <if_sid>80700</if_sid>
+    <field name="audit.execve.a1">ufw</field>
+    <field name="audit.execve.a2">disable</field>
+    <description>UFW: Firewall disabled.</description>
+    <group>firewall,gdpr_IV_30.1.g,</group>
+    <mitre>
+      <id>T1562.004</id>
+    </mitre>
+  </rule>
+  <rule id="80904" level="10">
+    <if_sid>80700</if_sid>
+    <field name="audit.execve.a1">ufw</field>
+    <field name="audit.execve.a2">reset</field>
+    <description>UFW: Firewall rules reset.</description>
+    <group>firewall,gdpr_IV_30.1.g,</group>
+    <mitre>
+      <id>T1562.004</id>
+    </mitre>
+  </rule>
+</group>
